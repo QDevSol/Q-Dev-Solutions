@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-2xl font-display font-semibold text-white mb-4">1. Introduction</h2>
               <p>
-                Welcome to Q-Dev Solutions ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://qdevsolutions.com" className="text-violet-400 hover:text-violet-300">qdevsolutions.com</a>.
+                Welcome to Q-Dev Solutions (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://qdevsolutions.com" className="text-violet-400 hover:text-violet-300">qdevsolutions.com</a>.
               </p>
               <p className="mt-4">
                 Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.

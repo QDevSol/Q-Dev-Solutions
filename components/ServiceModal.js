@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import Link from 'next/link';
 
 export default function ServiceModal({ isOpen, onClose, service }) {
   // Prevent scrolling when modal is open
@@ -106,13 +107,13 @@ export default function ServiceModal({ isOpen, onClose, service }) {
           >
             Close
           </button>
-          <a
+          <Link
             href="/#contact"
             onClick={onClose}
             className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-violet-600 to-purple-700 text-white text-sm font-semibold hover:from-violet-500 hover:to-purple-600 transition-all shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50"
           >
             Get Started
-          </a>
+          </Link>
         </div>
       </div>
     </div>,
