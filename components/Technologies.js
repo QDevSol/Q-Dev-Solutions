@@ -1,53 +1,66 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 const technologies = [
   // Cloud
-  { name: 'AWS', logo: '/stack/aws.svg' },
-  { name: 'Google Cloud', logo: '/stack/google-cloud.svg' },
-  { name: 'Azure', logo: '/stack/azure.svg' },
+  { title: "AWS", name: "AWS", logo: "/stack/aws.svg" },
+  {
+    title: "Google Cloud",
+    name: "Google Cloud",
+    logo: "/stack/google-cloud.svg",
+  },
+  { title: "Azure", name: "Azure", logo: "/stack/azure.svg" },
+  { title: "Vercel", name: "Vercel", logo: "/partners/vercel-white.svg" },
   // Frontend
-  { name: 'React', logo: '/stack/react.svg' },
-  { name: 'Next.js', logo: '/stack/nextjs.svg' },
-  { name: 'Vue.js', logo: '/stack/vue.svg' },
-  { name: 'Angular', logo: '/stack/angular.svg' },
-  { name: 'Tailwind CSS', logo: '/stack/tailwindcss.svg' },
-  { name: 'TypeScript', logo: '/stack/typescript.svg' },
-  { name: 'JavaScript', logo: '/stack/javascript.svg' },
+  { title: "React", name: "React", logo: "/stack/react.svg" },
+  { title: "Next.js", logo: "/stack/nextjs.svg" },
+  { title: "Vue.js", name: "Vue.js", logo: "/stack/vue.svg" },
+  { title: "Angular", name: "Angular", logo: "/stack/angular.svg" },
+  {
+    title: "Tailwind CSS",
+    name: "Tailwind CSS",
+    logo: "/stack/tailwindcss.svg",
+  },
+  { title: "TypeScript", name: "TypeScript", logo: "/stack/typescript.svg" },
+  { title: "JavaScript", name: "JavaScript", logo: "/stack/javascript.svg" },
   // Backend
-  { name: 'Node.js', logo: '/stack/nodejs.svg' },
-  { name: 'Python', logo: '/stack/python.svg' },
-  { name: 'Go', logo: '/stack/go.svg' },
-  { name: 'Java', logo: '/stack/java.svg' },
-  { name: 'PHP', logo: '/stack/php.svg' },
-  { name: 'C#', logo: '/stack/csharp.svg' },
-  { name: '.NET', logo: '/stack/dotnet.svg' },
-  { name: 'GraphQL', logo: '/stack/graphql.svg' },
+  { title: "Node.js", logo: "/stack/nodejs.svg" },
+  { title: "Python", name: "Python", logo: "/stack/python.svg" },
+  { title: "Go", name: "Go", logo: "/stack/go.svg" },
+  { title: "Java", name: "Java", logo: "/stack/java.svg" },
+  { title: "PHP", name: "PHP", logo: "/stack/php.svg" },
+  { title: "C#", name: "C#", logo: "/stack/csharp.svg" },
+  { title: ".NET", name: ".NET", logo: "/stack/dotnet.svg" },
+  { title: "GraphQL", name: "GraphQL", logo: "/stack/graphql.svg" },
   // CMS
-  { name: 'WordPress', logo: '/stack/wordpress.svg' },
-  { name: 'Strapi', logo: '/stack/strapi.svg' },
-  { name: 'Drupal', logo: '/stack/drupal.svg' },
+  { title: "WordPress", name: "WordPress", logo: "/stack/wordpress.svg" },
+  { title: "Strapi", name: "Strapi", logo: "/stack/strapi.svg" },
+  { title: "Drupal", name: "Drupal", logo: "/stack/drupal.svg" },
   // Mobile
-  { name: 'React Native', logo: '/stack/react-native.svg' },
-  { name: 'Flutter', logo: '/stack/flutter.svg' },
-  { name: 'Swift', logo: '/stack/swift.svg' },
-  { name: 'Kotlin', logo: '/stack/kotlin.svg' },
+  {
+    title: "React Native",
+    name: "React Native",
+    logo: "/stack/react-native.svg",
+  },
+  { title: "Flutter", name: "Flutter", logo: "/stack/flutter.svg" },
+  { title: "Swift", name: "Swift", logo: "/stack/swift.svg" },
+  { title: "Kotlin", name: "Kotlin", logo: "/stack/kotlin.svg" },
   // Database
-  { name: 'MongoDB', logo: '/stack/mongodb.svg' },
-  { name: 'PostgreSQL', logo: '/stack/postgresql.svg' },
-  { name: 'MySQL', logo: '/stack/mysql.svg' },
-  { name: 'Redis', logo: '/stack/redis.svg' },
-  { name: 'Firebase', logo: '/stack/firebase.svg' },
-  { name: 'SQLite', logo: '/stack/sqlite.svg' },
+  { title: "MongoDB", name: "MongoDB", logo: "/stack/mongodb.svg" },
+  { title: "PostgreSQL", name: "PostgreSQL", logo: "/stack/postgresql.svg" },
+  { title: "MySQL", name: "MySQL", logo: "/stack/mysql.svg" },
+  { title: "Redis", name: "Redis", logo: "/stack/redis.svg" },
+  { title: "Firebase", name: "Firebase", logo: "/stack/firebase.svg" },
+  { title: "SQLite", name: "SQLite", logo: "/stack/sqlite.svg" },
   // DevOps & Tools
-  { name: 'Docker', logo: '/stack/docker.svg' },
-  { name: 'Kubernetes', logo: '/stack/kubernetes.svg' },
-  { name: 'Git', logo: '/stack/git.svg' },
-  { name: 'Jenkins', logo: '/stack/jenkins.svg' },
-  { name: 'Terraform', logo: '/stack/terraform.svg' },
-  { name: 'Nginx', logo: '/stack/nginx.svg' },
+  { title: "Docker", logo: "/stack/docker.svg" },
+  { title: "Kubernetes", name: "Kubernetes", logo: "/stack/kubernetes.svg" },
+  { title: "Git", name: "Git", logo: "/stack/git.svg" },
+  { title: "Jenkins", name: "Jenkins", logo: "/stack/jenkins.svg" },
+  { title: "Terraform", name: "Terraform", logo: "/stack/terraform.svg" },
+  { title: "Nginx", name: "Nginx", logo: "/stack/nginx.svg" },
   // Design & AI
-  { name: 'Figma', logo: '/stack/figma.svg' },
-  { name: 'OpenAI', logo: '/stack/openai.svg' },
+  { title: "Figma", name: "Figma", logo: "/stack/figma.svg" },
+  { title: "OpenAI", logo: "/stack/openai.svg" },
 ];
 
 // Duplicate for seamless loop
@@ -55,7 +68,10 @@ const allTechs = [...technologies, ...technologies];
 
 export default function Technologies() {
   return (
-    <section id="technologies" className="py-20 bg-[#0D0A1A] relative overflow-hidden">
+    <section
+      id="technologies"
+      className="py-20 bg-[#0D0A1A] relative overflow-hidden"
+    >
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
@@ -64,7 +80,9 @@ export default function Technologies() {
         <div className="text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-px bg-amber-400" />
-            <span className="text-amber-400 text-sm font-semibold uppercase tracking-widest">Our Stack</span>
+            <span className="text-amber-400 text-sm font-semibold uppercase tracking-widest">
+              Our Stack
+            </span>
             <div className="w-8 h-px bg-amber-400" />
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-white">
@@ -95,9 +113,11 @@ export default function Technologies() {
                   className="h-6 w-auto object-contain"
                 />
               </div>
-              {tech?.name && <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors whitespace-nowrap">
-                {tech?.name}
-              </span>}
+              {tech?.name && (
+                <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors whitespace-nowrap">
+                  {tech?.name}
+                </span>
+              )}
             </div>
           ))}
         </div>
