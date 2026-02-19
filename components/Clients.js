@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const clients = [
   { name: 'TechCorp', initial: 'TC' },
   { name: 'InnovateCo', initial: 'IC' },
@@ -8,10 +10,10 @@ const clients = [
 ];
 
 const partners = [
-  { name: 'AWS', initial: 'AW' },
-  { name: 'Google Cloud', initial: 'GC' },
-  { name: 'Microsoft', initial: 'MS' },
-  { name: 'Vercel', initial: 'VC' },
+  { name: 'AWS', logo: '/partners/aws.svg', hideName: true },
+  { name: 'Google Cloud', logo: '/partners/google-cloud.svg', hideName: true },
+  { name: 'Microsoft', logo: '/partners/microsoft.svg', hideName: true },
+  { name: 'Vercel', logo: '/partners/vercel-white.svg', hideName: false },
 ];
 
 export default function Clients() {
@@ -65,14 +67,23 @@ export default function Clients() {
             {partners.map((partner) => (
               <div
                 key={partner.name}
-                className="group flex items-center gap-3 px-6 py-4 rounded-xl bg-[#1A1330] border border-[#2D2050] hover:border-amber-500/50 hover:bg-amber-500/5 transition-all duration-300 card-hover"
+                className="group flex items-center justify-center gap-3 px-8 py-6 rounded-xl bg-[#1A1330] border border-[#2D2050] hover:border-amber-500/50 hover:bg-amber-500/5 transition-all duration-300 card-hover min-w-[160px]"
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-amber-700/30 group-hover:shadow-amber-500/50 transition-shadow">
-                  {partner.initial}
+                <div className="relative h-8 flex items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-auto h-8"
+                  />
                 </div>
-                <span className="text-slate-300 font-medium group-hover:text-white transition-colors">
-                  {partner.name}
-                </span>
+                {!partner.hideName && (
+                  <span className="text-slate-300 font-medium group-hover:text-white transition-colors">
+                    {partner.name}
+                  </span>
+                )}
               </div>
             ))}
           </div>
