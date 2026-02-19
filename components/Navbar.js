@@ -15,6 +15,7 @@ const navLinks = [
   },
   { label: 'Services', href: '#services' },
   { label: 'Key Benefits', href: '#key-benefits' },
+  { label: 'Projects', href: '/projects' },
   {
     label: 'Career',
     href: '#',

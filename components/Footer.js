@@ -13,6 +13,7 @@ const footerLinks = {
     { label: 'AI Integrations', href: '/#services' },
   ],
   Explore: [
+    { label: 'Projects', href: '/projects' },
     { label: 'Key Benefits', href: '/#key-benefits' },
     { label: 'Our Clients', href: '/#clients' },
     { label: 'Contact Us', href: '/#contact' },
