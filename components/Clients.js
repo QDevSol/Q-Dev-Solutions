@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
 const clients = [
-  { name: 'TechCorp', initial: 'TC' },
-  { name: 'InnovateCo', initial: 'IC' },
-  { name: 'DataFlow', initial: 'DF' },
-  { name: 'CloudBase', initial: 'CB' },
-  { name: 'NexGen', initial: 'NG' },
-  { name: 'DigitalEdge', initial: 'DE' },
+  { name: 'Spotify', logo: '/clients/spotify.svg', hideName: true },
+  { name: 'Slack', logo: '/clients/slack.svg', hideName: true },
+  { name: 'Adobe', logo: '/clients/adobe.svg', hideName: true },
+  { name: 'Shopify', logo: '/clients/shopify.svg', hideName: true },
+  { name: 'Discord', logo: '/clients/discord.svg', hideName: true },
+  { name: 'Zoom', logo: '/clients/zoom.svg', hideName: true },
 ];
 
 const partners = [
@@ -42,12 +42,21 @@ export default function Clients() {
                 key={client.name}
                 className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-[#1A1330] border border-[#2D2050] hover:border-violet-500/50 hover:bg-violet-500/5 transition-all duration-300 card-hover"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-600 to-purple-800 flex items-center justify-center text-white font-bold text-sm mb-3 shadow-lg shadow-violet-700/30 group-hover:shadow-violet-500/50 transition-shadow">
-                  {client.initial}
+                <div className="relative h-10 w-full flex items-center justify-center">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-auto h-10 max-w-[80%] object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                  />
                 </div>
-                <span className="text-slate-400 text-xs font-medium group-hover:text-slate-300 transition-colors text-center">
-                  {client.name}
-                </span>
+                {!client.hideName && (
+                  <span className="text-slate-400 text-xs font-medium group-hover:text-slate-300 transition-colors text-center mt-3">
+                    {client.name}
+                  </span>
+                )}
               </div>
             ))}
           </div>
