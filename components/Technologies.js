@@ -56,20 +56,21 @@ export default function Technologies() {
           {allTechs.map((tech, i) => (
             <div
               key={`row1-${i}`}
-              className="inline-flex items-center gap-3 mx-3 px-5 py-3 rounded-xl bg-[#1A1330] border border-[#2D2050] hover:border-violet-500/50 hover:bg-violet-500/5 transition-all duration-300 cursor-default group"
+              className="inline-flex flex-shrink-0 items-center gap-3 mx-3 px-5 py-3 rounded-xl bg-[#1A1330] border border-[#2D2050] hover:border-violet-500/50 hover:bg-violet-500/5 transition-all duration-300 cursor-default group"
             >
               <div className="relative h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <Image
                   src={tech.logo}
                   alt={tech.name}
-                  width={24}
-                  height={24}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   className="h-6 w-auto object-contain"
                 />
               </div>
-              <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors whitespace-nowrap">
-                {tech.name}
-              </span>
+              {tech?.name && <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors whitespace-nowrap">
+                {tech?.name}
+              </span>}
             </div>
           ))}
         </div>
@@ -84,14 +85,15 @@ export default function Technologies() {
           {[...allTechs].reverse().map((tech, i) => (
             <div
               key={`row2-${i}`}
-              className="inline-flex items-center gap-3 mx-3 px-5 py-3 rounded-xl bg-[#1A1330] border border-[#2D2050] hover:border-amber-500/50 hover:bg-amber-500/5 transition-all duration-300 cursor-default group"
+              className="inline-flex flex-shrink-0 items-center gap-3 mx-3 px-5 py-3 rounded-xl bg-[#1A1330] border border-[#2D2050] hover:border-amber-500/50 hover:bg-amber-500/5 transition-all duration-300 cursor-default group"
             >
               <div className="relative h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <Image
                   src={tech.logo}
                   alt={tech.name}
-                  width={24}
-                  height={24}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   className="h-6 w-auto object-contain"
                 />
               </div>

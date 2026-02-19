@@ -82,8 +82,8 @@ export default function Clients() {
                   <Image
                     src={partner.logo}
                     alt={partner.name}
-                    width={120}
-                    height={32}
+                    width={0}
+                    height={0}
                     sizes="120px"
                     className="w-auto h-8"
                   />
