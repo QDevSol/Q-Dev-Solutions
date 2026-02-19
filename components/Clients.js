@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 const clients = [
   { name: 'Spotify', logo: '/clients/spotify.svg', hideName: true },
   { name: 'Slack', logo: '/clients/slack.svg', hideName: true },
@@ -43,12 +41,11 @@ export default function Clients() {
                 className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-[#1A1330] border border-[#2D2050] hover:border-violet-500/50 hover:bg-violet-500/5 transition-all duration-300 card-hover"
               >
                 <div className="relative h-10 w-full flex items-center justify-center">
-                  <Image
+                  <img
                     src={client.logo}
                     alt={client.name}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
+                    loading="lazy"
+                    decoding="async"
                     className="w-auto h-10 max-w-[80%] object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
@@ -79,12 +76,11 @@ export default function Clients() {
                 className="group flex items-center justify-center gap-3 px-8 py-6 rounded-xl bg-[#1A1330] border border-[#2D2050] hover:border-amber-500/50 hover:bg-amber-500/5 transition-all duration-300 card-hover min-w-[160px]"
               >
                 <div className="relative h-8 flex items-center justify-center">
-                  <Image
+                  <img
                     src={partner.logo}
                     alt={partner.name}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
+                    loading="lazy"
+                    decoding="async"
                     className="w-auto h-8"
                   />
                 </div>
