@@ -1,33 +1,53 @@
 import Image from 'next/image';
 
 const technologies = [
-  { name: 'OpenAI', logo: '/stack/openai.svg' },
-  { name: 'TypeScript', logo: '/stack/typescript.svg' },
-  { name: 'Node.js', logo: '/stack/nodejs.svg' },
-  { name: 'PHP', logo: '/stack/php.svg' },
-  { name: 'JavaScript', logo: '/stack/javascript.svg' },
-  { name: 'Python', logo: '/stack/python.svg' },
-  { name: 'C#', logo: '/stack/csharp.svg' },
-  { name: '.NET', logo: '/stack/dotnet.svg' },
+  // Cloud
+  { name: 'AWS', logo: '/stack/aws.svg' },
+  { name: 'Google Cloud', logo: '/stack/google-cloud.svg' },
+  { name: 'Azure', logo: '/stack/azure.svg' },
+  // Frontend
   { name: 'React', logo: '/stack/react.svg' },
   { name: 'Next.js', logo: '/stack/nextjs.svg' },
   { name: 'Vue.js', logo: '/stack/vue.svg' },
   { name: 'Angular', logo: '/stack/angular.svg' },
-  { name: 'React Native', logo: '/stack/react-native.svg' },
-  { name: 'AWS', logo: '/stack/aws.svg' },
-  { name: 'AWS Lambda', logo: '/stack/aws.svg' },
-  { name: 'AWS EC2', logo: '/stack/aws.svg' },
-  { name: 'AWS S3', logo: '/stack/aws.svg' },
-  { name: 'Flutter', logo: '/stack/flutter.svg' },
-  { name: 'Flutter (Mobile Apps)', logo: '/stack/flutter.svg' },
+  { name: 'Tailwind CSS', logo: '/stack/tailwindcss.svg' },
+  { name: 'TypeScript', logo: '/stack/typescript.svg' },
+  { name: 'JavaScript', logo: '/stack/javascript.svg' },
+  // Backend
+  { name: 'Node.js', logo: '/stack/nodejs.svg' },
+  { name: 'Python', logo: '/stack/python.svg' },
+  { name: 'Go', logo: '/stack/go.svg' },
+  { name: 'Java', logo: '/stack/java.svg' },
+  { name: 'PHP', logo: '/stack/php.svg' },
+  { name: 'C#', logo: '/stack/csharp.svg' },
+  { name: '.NET', logo: '/stack/dotnet.svg' },
+  { name: 'GraphQL', logo: '/stack/graphql.svg' },
+  // CMS
   { name: 'WordPress', logo: '/stack/wordpress.svg' },
-  { name: 'WordPress (Websites)', logo: '/stack/wordpress.svg' },
   { name: 'Strapi', logo: '/stack/strapi.svg' },
-  { name: 'Strapi (APIs)', logo: '/stack/strapi.svg' },
   { name: 'Drupal', logo: '/stack/drupal.svg' },
-  { name: 'Hugo', logo: '/stack/hugo.svg' },
+  // Mobile
+  { name: 'React Native', logo: '/stack/react-native.svg' },
+  { name: 'Flutter', logo: '/stack/flutter.svg' },
+  { name: 'Swift', logo: '/stack/swift.svg' },
+  { name: 'Kotlin', logo: '/stack/kotlin.svg' },
+  // Database
+  { name: 'MongoDB', logo: '/stack/mongodb.svg' },
+  { name: 'PostgreSQL', logo: '/stack/postgresql.svg' },
+  { name: 'MySQL', logo: '/stack/mysql.svg' },
+  { name: 'Redis', logo: '/stack/redis.svg' },
+  { name: 'Firebase', logo: '/stack/firebase.svg' },
+  { name: 'SQLite', logo: '/stack/sqlite.svg' },
+  // DevOps & Tools
   { name: 'Docker', logo: '/stack/docker.svg' },
-  { name: 'Docker Compose', logo: '/stack/docker.svg' },
+  { name: 'Kubernetes', logo: '/stack/kubernetes.svg' },
+  { name: 'Git', logo: '/stack/git.svg' },
+  { name: 'Jenkins', logo: '/stack/jenkins.svg' },
+  { name: 'Terraform', logo: '/stack/terraform.svg' },
+  { name: 'Nginx', logo: '/stack/nginx.svg' },
+  // Design & AI
+  { name: 'Figma', logo: '/stack/figma.svg' },
+  { name: 'OpenAI', logo: '/stack/openai.svg' },
 ];
 
 // Duplicate for seamless loop
