@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import ServiceModal from './ServiceModal';
 
 const services = [
@@ -22,6 +23,7 @@ const services = [
       'App Store Optimization & Deployment',
       'Maintenance & Support'
     ],
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800',
     details: 'We build robust mobile applications that provide seamless user experiences across all devices. Whether you need a consumer-facing app or an enterprise solution, our team delivers high-quality, scalable mobile products.'
   },
   {
@@ -42,6 +44,7 @@ const services = [
       'SEO & Performance Optimization',
       'Progressive Web Apps (PWA)'
     ],
+    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=800',
     details: 'Our websites are designed to convert visitors into customers, with a focus on speed, security, and scalability. We use modern frameworks like Next.js and React to ensure your site is future-proof.'
   },
   {
@@ -62,6 +65,7 @@ const services = [
       'Legacy System Modernization',
       'Database Design & Management'
     ],
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
     details: 'We develop tailored software solutions that streamline your business operations and drive efficiency. From internal tools to complex SaaS platforms, we have the expertise to bring your vision to life.'
   },
   {
@@ -82,6 +86,7 @@ const services = [
       'Usability Testing',
       'Interaction Design'
     ],
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800',
     details: 'We create intuitive and engaging designs that put the user first. Our design process ensures high user satisfaction and retention by balancing aesthetics with functionality.'
   },
   {
@@ -102,6 +107,7 @@ const services = [
       'Machine Learning Models',
       'Natural Language Processing'
     ],
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
     details: 'Leverage the power of AI to gain insights, automate repetitive tasks, and stay ahead of the competition. We help you identify high-impact AI use cases for your business.'
   },
   {
@@ -122,7 +128,29 @@ const services = [
       'Security Vulnerability Assessment',
       'API Testing'
     ],
+    image: 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&q=80&w=800',
     details: 'We ensure your software is bug-free, secure, and performs optimally under all conditions. Our QA process is integrated throughout the development lifecycle to catch issues early.'
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    ),
+    title: 'SEO Optimization',
+    description:
+      'Boosting your online visibility and ranking higher on search engines to drive organic traffic and growth.',
+    color: 'from-orange-500 to-red-600',
+    glow: 'group-hover:shadow-orange-500/30',
+    features: [
+      'Keyword Research & Strategy',
+      'On-Page & Off-Page SEO',
+      'Technical SEO Audits',
+      'Content Optimization',
+      'Local SEO'
+    ],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+    details: 'We implement data-driven SEO strategies to improve your search engine rankings and attract qualified leads. Our holistic approach ensures long-term visibility and sustainable growth.'
   }
 ];
 
@@ -156,28 +184,41 @@ export default function Services() {
             <div
               key={service.title}
               onClick={() => setSelectedService(service)}
-              className={`group relative p-6 rounded-2xl bg-[#1A1330] border border-[#2D2050] card-hover cursor-pointer overflow-hidden transition-all duration-300 hover:border-violet-500/30`}
+              className={`group relative rounded-2xl bg-[#1A1330] border border-[#2D2050] card-hover cursor-pointer overflow-hidden transition-all duration-300 hover:border-violet-500/30`}
             >
-              {/* Hover glow bg */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`} />
-
-              {/* Icon */}
-              <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.color} text-white mb-5 shadow-lg ${service.glow} transition-shadow duration-300`}>
-                {service.icon}
+              {/* Image */}
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1330] via-[#1A1330]/60 to-transparent" />
               </div>
 
-              {/* Content */}
-              <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{service.description}</p>
+              <div className="p-6 relative">
+                {/* Hover glow bg */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`} />
 
-              {/* Arrow */}
-              <div className="mt-5 flex items-center gap-1 text-violet-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Learn more
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                {/* Icon */}
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.color} text-white mb-5 shadow-lg ${service.glow} transition-shadow duration-300 relative z-10`}>
+                  {service.icon}
+                </div>
+
+                {/* Content */}
+                <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors relative z-10">
+                  {service.title}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed relative z-10">{service.description}</p>
+
+                {/* Arrow */}
+                <div className="mt-5 flex items-center gap-1 text-violet-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
+                  Learn more
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
               </div>
             </div>
           ))}

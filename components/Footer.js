@@ -1,15 +1,21 @@
 const footerLinks = {
-  Agency: [
-    { label: 'About Us', href: '/#about' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Key Benefits', href: '/#key-benefits' },
-    { label: 'Contact Us', href: '/#contact' },
+  Company: [
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Life at Q-Dev', href: '/career' },
+    { label: 'Open Positions', href: '/jobs' },
+    // { label: 'Meet the Team', href: '/team' },
   ],
   Services: [
     { label: 'Mobile App Development', href: '/#services' },
     { label: 'Website Development', href: '/#services' },
     { label: 'Software Development', href: '/#services' },
     { label: 'AI Integrations', href: '/#services' },
+  ],
+  Explore: [
+    { label: 'Key Benefits', href: '/#key-benefits' },
+    { label: 'Our Clients', href: '/#clients' },
+    { label: 'Contact Us', href: '/#contact' },
   ],
 };
 
@@ -22,7 +28,7 @@ export default function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-violet-500/60 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-5">

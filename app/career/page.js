@@ -3,12 +3,12 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 export const metadata = {
-  title: 'Careers | Q-Dev Solutions - Join Our Team',
-  description: 'Explore career opportunities at Q-Dev Solutions. Discover our culture, benefits, and current job openings in web development, mobile apps, and AI.',
-  keywords: ['careers', 'jobs', 'hiring', 'web development jobs', 'software engineer jobs', 'Q-Dev Solutions careers', 'remote jobs'],
+  title: 'Life at Q-Dev | Q-Dev Solutions - Culture & Benefits',
+  description: 'Discover the culture, values, and benefits of working at Q-Dev Solutions. Learn about our remote-first environment and commitment to growth.',
+  keywords: ['company culture', 'benefits', 'work-life balance', 'remote work', 'career growth', 'Q-Dev Solutions'],
   openGraph: {
-    title: 'Careers at Q-Dev Solutions',
-    description: 'Join our team of innovators and creators. Build the future with Q-Dev Solutions.',
+    title: 'Life at Q-Dev Solutions',
+    description: 'Experience our culture of innovation and collaboration. See what makes Q-Dev Solutions a great place to work.',
     url: 'https://qdevsolutions.com/career',
     type: 'website',
   },
@@ -51,37 +51,6 @@ export default function Career() {
     },
   ];
 
-  const jobs = [
-    {
-      id: 1,
-      title: 'Senior Frontend Developer',
-      department: 'Engineering',
-      location: 'Remote',
-      type: 'Full-time',
-    },
-    {
-      id: 2,
-      title: 'UI/UX Designer',
-      department: 'Design',
-      location: 'Remote',
-      type: 'Contract',
-    },
-    {
-      id: 3,
-      title: 'Backend Engineer (Node.js)',
-      department: 'Engineering',
-      location: 'Remote',
-      type: 'Full-time',
-    },
-    {
-      id: 4,
-      title: 'Project Manager',
-      department: 'Product',
-      location: 'Remote',
-      type: 'Full-time',
-    },
-  ];
-
   return (
     <>
       <Navbar />
@@ -96,10 +65,10 @@ export default function Career() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <span className="inline-block px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-sm font-medium mb-6 backdrop-blur-sm">
-              We are hiring!
+              Our Culture
             </span>
             <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold mb-8 leading-tight">
-              Build the Future with <br />
+              Life at <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-amber-300">
                 Q-Dev Solutions
               </span>
@@ -109,16 +78,10 @@ export default function Career() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="#jobs"
+                href="/jobs"
                 className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-violet-600 to-purple-700 text-white font-semibold hover:from-violet-500 hover:to-purple-600 transition-all shadow-lg shadow-purple-700/30 hover:shadow-purple-500/50 hover:-translate-y-0.5"
               >
                 View Open Positions
-              </a>
-              <a
-                href="#life-at-qdev"
-                className="px-8 py-3.5 rounded-lg border border-slate-700 hover:border-violet-500/50 hover:bg-violet-500/5 text-slate-300 hover:text-white transition-all"
-              >
-                Life at Q-Dev
               </a>
             </div>
           </div>
@@ -128,7 +91,7 @@ export default function Career() {
         <section id="life-at-qdev" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#080614] relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="font-display text-3xl sm:text-4xl font-bold mb-6">Life at Q-Dev</h2>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold mb-6">Why Join Us?</h2>
               <p className="text-slate-400 max-w-2xl mx-auto text-lg">
                 We believe in a culture of learning, collaboration, and balance. Here, your work matters, and your growth is our priority.
               </p>
@@ -173,79 +136,6 @@ export default function Career() {
                   <p className="text-slate-400 leading-relaxed">{benefit.description}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Jobs Section */}
-        <section id="jobs" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-violet-600/5 blur-[100px] pointer-events-none" />
-          
-          <div className="max-w-5xl mx-auto relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl sm:text-4xl font-bold mb-6">Open Positions</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-                Ready to make an impact? Check out our current openings and apply to join our growing team.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {jobs.map((job) => (
-                <div
-                  key={job.id}
-                  className="group flex flex-col md:flex-row items-center justify-between p-6 rounded-xl bg-[#131126]/80 backdrop-blur-sm border border-slate-800/50 hover:border-violet-500/50 hover:bg-[#1A1633] transition-all duration-300"
-                >
-                  <div className="mb-4 md:mb-0 text-center md:text-left w-full md:w-auto">
-                    <h3 className="font-display text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">
-                      {job.title}
-                    </h3>
-                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-sm text-slate-400">
-                      <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                        {job.department}
-                      </span>
-                      <span className="hidden sm:inline">•</span>
-                      <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        {job.location}
-                      </span>
-                      <span className="hidden sm:inline">•</span>
-                      <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {job.type}
-                      </span>
-                    </div>
-                  </div>
-                  <a
-                    href="#"
-                    className="w-full md:w-auto px-6 py-2.5 rounded-lg border border-violet-500/30 text-violet-300 font-medium hover:bg-violet-600 hover:text-white hover:border-violet-600 transition-all text-center"
-                  >
-                    Apply Now
-                  </a>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <p className="text-slate-400 mb-4">
-                Don't see a role that fits? We're always looking for talent.
-              </p>
-              <a
-                href="mailto:careers@qdevsolutions.com"
-                className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 font-medium transition-colors border-b border-transparent hover:border-violet-300"
-              >
-                Send us your resume
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
             </div>
           </div>
         </section>
