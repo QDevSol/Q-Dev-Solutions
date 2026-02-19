@@ -15,12 +15,19 @@ const technologies = [
   { name: 'Angular', logo: '/stack/angular.svg' },
   { name: 'React Native', logo: '/stack/react-native.svg' },
   { name: 'AWS', logo: '/stack/aws.svg' },
+  { name: 'AWS Lambda', logo: '/stack/aws.svg' },
+  { name: 'AWS EC2', logo: '/stack/aws.svg' },
+  { name: 'AWS S3', logo: '/stack/aws.svg' },
   { name: 'Flutter', logo: '/stack/flutter.svg' },
+  { name: 'Flutter (Mobile Apps)', logo: '/stack/flutter.svg' },
   { name: 'WordPress', logo: '/stack/wordpress.svg' },
+  { name: 'WordPress (Websites)', logo: '/stack/wordpress.svg' },
   { name: 'Strapi', logo: '/stack/strapi.svg' },
+  { name: 'Strapi (APIs)', logo: '/stack/strapi.svg' },
   { name: 'Drupal', logo: '/stack/drupal.svg' },
   { name: 'Hugo', logo: '/stack/hugo.svg' },
   { name: 'Docker', logo: '/stack/docker.svg' },
+  { name: 'Docker Compose', logo: '/stack/docker.svg' },
 ];
 
 // Duplicate for seamless loop
