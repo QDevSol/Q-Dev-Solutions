@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'About Us', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Key Benefits', href: '#key-benefits' },
+  { label: 'Career', href: '/career' },
   { label: 'Clients', href: '#clients' },
   { label: 'Contact Us', href: '#contact' },
 ];
@@ -27,6 +28,11 @@ export default function Navbar() {
     e.preventDefault();
     setMenuOpen(false);
     
+    if (href.startsWith('/')) {
+      router.push(href);
+      return;
+    }
+
     if (pathname === '/') {
       if (href === '#') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -69,7 +75,13 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
-                  href={pathname === '/' ? link.href : '/' + link.href}
+                  href={
+                    link.href.startsWith('/')
+                      ? link.href
+                      : pathname === '/'
+                      ? link.href
+                      : '/' + link.href
+                  }
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="relative px-4 py-2 text-sm text-slate-300 rounded-lg font-medium transition-all duration-300 hover:text-white hover:bg-white/5 hover:-translate-y-0.5 after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1 after:h-px after:bg-gradient-to-r after:from-violet-500 after:to-amber-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
                 >
@@ -116,7 +128,13 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
-                    href={link.href}
+                    href={
+                      link.href.startsWith('/')
+                        ? link.href
+                        : pathname === '/'
+                        ? link.href
+                        : '/' + link.href
+                    }
                     onClick={(e) => handleNavClick(e, link.href)}
                     className="relative block px-4 py-3 text-slate-300 rounded-lg transition-all duration-300 font-medium hover:text-white hover:bg-white/5 after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-2 after:h-px after:bg-gradient-to-r after:from-violet-500 after:to-amber-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
                   >

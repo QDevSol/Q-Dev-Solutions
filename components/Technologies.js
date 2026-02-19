@@ -106,7 +106,7 @@ export default function Technologies() {
               <div className="relative h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <Image
                   src={tech.logo}
-                  alt={tech.name}
+                  alt={tech.name || tech.title}
                   width={0}
                   height={0}
                   sizes="100vw"
@@ -137,16 +137,18 @@ export default function Technologies() {
               <div className="relative h-6 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <Image
                   src={tech.logo}
-                  alt={tech.name}
+                  alt={tech.name || tech.title}
                   width={0}
                   height={0}
                   sizes="100vw"
                   className="h-6 w-auto object-contain"
                 />
               </div>
-              <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors whitespace-nowrap">
-                {tech.name}
-              </span>
+              {tech.name && (
+                <span className="text-slate-300 text-sm font-medium group-hover:text-white transition-colors whitespace-nowrap">
+                  {tech.name}
+                </span>
+              )}
             </div>
           ))}
         </div>
