@@ -54,7 +54,7 @@ export default function ServiceModal({ isOpen, onClose, service }) {
           
           <div className="flex items-center gap-4 relative z-10">
             <div className="p-3 bg-white/10 rounded-xl backdrop-blur-md">
-              {service.icon}
+              {service.iconElement || service.icon}
             </div>
             <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
               {service.title}

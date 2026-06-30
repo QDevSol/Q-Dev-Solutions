@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "FinTech Analytics Dashboard",
+    "category": "Web Application",
+    "caption": "Real-time insights dashboard for financial performance.",
+    "description": "A comprehensive financial analytics dashboard for real-time market data visualization and portfolio management.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+    "tags": ["React", "Next.js", "D3.js", "Node.js"],
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "MediCare Telemedicine App",
+    "category": "Mobile App",
+    "caption": "Secure virtual care for patients and providers.",
+    "description": "A secure telemedicine platform connecting patients with healthcare providers for virtual consultations.",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200",
+    "tags": ["React Native", "Firebase", "WebRTC", "Tailwind CSS"],
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "Luxe E-commerce Store",
+    "category": "E-commerce",
+    "caption": "Premium shopping experience with smart recommendations.",
+    "description": "A high-performance e-commerce solution with AI-driven product recommendations and seamless checkout.",
+    "image": "https://images.unsplash.com/photo-1472851294608-411346ade7f6?auto=format&fit=crop&q=80&w=1200",
+    "tags": ["Next.js", "Shopify API", "Stripe", "Redis"],
+    "link": "#"
+  }
+]

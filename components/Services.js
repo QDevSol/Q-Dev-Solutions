@@ -1,21 +1,85 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import ServiceModal from './ServiceModal';
 
-const services = [
+const serviceColorOptions = {
+  violet: {
+    color: 'from-violet-600 to-purple-700',
+    glow: 'group-hover:shadow-violet-500/30',
+  },
+  amber: {
+    color: 'from-amber-500 to-orange-600',
+    glow: 'group-hover:shadow-amber-500/30',
+  },
+  purple: {
+    color: 'from-purple-600 to-violet-800',
+    glow: 'group-hover:shadow-purple-500/30',
+  },
+  fuchsia: {
+    color: 'from-fuchsia-600 to-pink-700',
+    glow: 'group-hover:shadow-fuchsia-500/30',
+  },
+  cyan: {
+    color: 'from-cyan-600 to-blue-700',
+    glow: 'group-hover:shadow-cyan-500/30',
+  },
+  emerald: {
+    color: 'from-emerald-600 to-teal-700',
+    glow: 'group-hover:shadow-emerald-500/30',
+  },
+  orange: {
+    color: 'from-orange-500 to-red-600',
+    glow: 'group-hover:shadow-orange-500/30',
+  },
+};
+
+const serviceIcons = {
+  mobile: (
+    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+    </svg>
+  ),
+  web: (
+    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  ),
+  software: (
+    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+    </svg>
+  ),
+  design: (
+    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+    </svg>
+  ),
+  ai: (
+    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+    </svg>
+  ),
+  qa: (
+    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  ),
+  seo: (
+    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+  ),
+};
+
+const defaultServices = [
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    ),
+    iconKey: 'mobile',
     title: 'Mobile App Development',
     description:
       'Crafting user-friendly, high-performance applications for iOS and Android platforms to engage users on the go.',
-    color: 'from-violet-600 to-purple-700',
-    glow: 'group-hover:shadow-violet-500/30',
+    colorKey: 'violet',
     features: [
       'iOS & Android Native Apps',
       'Cross-Platform (React Native/Flutter)',
@@ -27,16 +91,11 @@ const services = [
     details: 'We build robust mobile applications that provide seamless user experiences across all devices. Whether you need a consumer-facing app or an enterprise solution, our team delivers high-quality, scalable mobile products.'
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
+    iconKey: 'web',
     title: 'Website Development',
     description:
       'Building responsive, secure, and scalable websites that enhance online presence and drive business growth.',
-    color: 'from-amber-500 to-orange-600',
-    glow: 'group-hover:shadow-amber-500/30',
+    colorKey: 'amber',
     features: [
       'Responsive Web Design',
       'E-commerce Solutions',
@@ -48,16 +107,11 @@ const services = [
     details: 'Our websites are designed to convert visitors into customers, with a focus on speed, security, and scalability. We use modern frameworks like Next.js and React to ensure your site is future-proof.'
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-      </svg>
-    ),
+    iconKey: 'software',
     title: 'Software Development',
     description:
       'Designing and implementing custom software solutions to meet specific business needs and improve operational efficiency.',
-    color: 'from-purple-600 to-violet-800',
-    glow: 'group-hover:shadow-purple-500/30',
+    colorKey: 'purple',
     features: [
       'Custom Enterprise Software',
       'API Development & Integration',
@@ -69,16 +123,11 @@ const services = [
     details: 'We develop tailored software solutions that streamline your business operations and drive efficiency. From internal tools to complex SaaS platforms, we have the expertise to bring your vision to life.'
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-      </svg>
-    ),
+    iconKey: 'design',
     title: 'UX/UI Design',
     description:
       'Creating intuitive and aesthetically pleasing user interfaces that enhance user experience and satisfaction.',
-    color: 'from-fuchsia-600 to-pink-700',
-    glow: 'group-hover:shadow-fuchsia-500/30',
+    colorKey: 'fuchsia',
     features: [
       'User Research & Personas',
       'Wireframing & Prototyping',
@@ -90,16 +139,11 @@ const services = [
     details: 'We create intuitive and engaging designs that put the user first. Our design process ensures high user satisfaction and retention by balancing aesthetics with functionality.'
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
+    iconKey: 'ai',
     title: 'AI Integrations',
     description:
       'Integrating cutting-edge artificial intelligence technologies to automate processes, provide insights, and enhance decision-making.',
-    color: 'from-cyan-600 to-blue-700',
-    glow: 'group-hover:shadow-cyan-500/30',
+    colorKey: 'cyan',
     features: [
       'Chatbots & Virtual Assistants',
       'Predictive Analytics',
@@ -111,16 +155,11 @@ const services = [
     details: 'Leverage the power of AI to gain insights, automate repetitive tasks, and stay ahead of the competition. We help you identify high-impact AI use cases for your business.'
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    iconKey: 'qa',
     title: 'QA and Testing',
     description:
       'Ensuring the reliability and quality of software through rigorous testing and quality assurance practices.',
-    color: 'from-emerald-600 to-teal-700',
-    glow: 'group-hover:shadow-emerald-500/30',
+    colorKey: 'emerald',
     features: [
       'Automated Testing Suites',
       'Manual Functional Testing',
@@ -132,16 +171,11 @@ const services = [
     details: 'We ensure your software is bug-free, secure, and performs optimally under all conditions. Our QA process is integrated throughout the development lifecycle to catch issues early.'
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-    ),
+    iconKey: 'seo',
     title: 'SEO Optimization',
     description:
       'Boosting your online visibility and ranking higher on search engines to drive organic traffic and growth.',
-    color: 'from-orange-500 to-red-600',
-    glow: 'group-hover:shadow-orange-500/30',
+    colorKey: 'orange',
     features: [
       'Keyword Research & Strategy',
       'On-Page & Off-Page SEO',
@@ -156,6 +190,32 @@ const services = [
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
+  const [servicesData, setServicesData] = useState(defaultServices);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const stored = localStorage.getItem('qd_admin_services');
+    if (!stored) return;
+    try {
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        setServicesData(parsed);
+      }
+    } catch {}
+  }, []);
+
+  const normalizedServices = servicesData.map((service) => {
+    const colorConfig = serviceColorOptions[service.colorKey] || serviceColorOptions.violet;
+    const iconElement = serviceIcons[service.iconKey] || (
+      <span className="text-sm font-semibold">{(service.title || 'S').slice(0, 1)}</span>
+    );
+    return {
+      ...service,
+      color: colorConfig.color,
+      glow: colorConfig.glow,
+      iconElement,
+    };
+  });
 
   return (
     <section id="services" className="section-padding bg-[#0F0C1F] relative overflow-hidden">
@@ -180,7 +240,7 @@ export default function Services() {
 
         {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
+          {normalizedServices.map((service) => (
             <div
               key={service.title}
               onClick={() => setSelectedService(service)}
@@ -203,7 +263,7 @@ export default function Services() {
 
                 {/* Icon */}
                 <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.color} text-white mb-5 shadow-lg ${service.glow} transition-shadow duration-300 relative z-10`}>
-                  {service.icon}
+                  {service.iconElement}
                 </div>
 
                 {/* Content */}

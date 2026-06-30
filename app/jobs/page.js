@@ -1,26 +1,18 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-export const metadata = {
-  title: 'Open Positions | Q-Dev Solutions - Join Our Team',
-  description: 'Explore current job openings at Q-Dev Solutions. Join our team of innovators in web development, mobile apps, and AI.',
-  keywords: ['jobs', 'hiring', 'open positions', 'web development jobs', 'software engineer jobs', 'remote jobs'],
-  openGraph: {
-    title: 'Open Positions at Q-Dev Solutions',
-    description: 'Find your next role at Q-Dev Solutions. We are hiring talented developers and designers.',
-    url: 'https://qdevsolutions.com/jobs',
-    type: 'website',
-  },
-};
-
 export default function Jobs() {
-  const jobs = [
+  const defaultJobs = [
     {
       id: 1,
       title: 'Senior Frontend Developer',
       department: 'Engineering',
       location: 'Remote',
       type: 'Full-time',
+      applyUrl: '#',
     },
     {
       id: 2,
@@ -28,6 +20,7 @@ export default function Jobs() {
       department: 'Design',
       location: 'Remote',
       type: 'Contract',
+      applyUrl: '#',
     },
     {
       id: 3,
@@ -35,6 +28,7 @@ export default function Jobs() {
       department: 'Engineering',
       location: 'Remote',
       type: 'Full-time',
+      applyUrl: '#',
     },
     {
       id: 4,
@@ -42,8 +36,21 @@ export default function Jobs() {
       department: 'Product',
       location: 'Remote',
       type: 'Full-time',
+      applyUrl: '#',
     },
   ];
+  const [jobs, setJobs] = useState(defaultJobs);
+
+  useEffect(() => {
+    const stored = localStorage.getItem('qd_admin_jobs');
+    if (!stored) return;
+    try {
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        setJobs(parsed);
+      }
+    } catch {}
+  }, []);
 
   return (
     <>
@@ -111,7 +118,7 @@ export default function Jobs() {
                     </div>
                   </div>
                   <a
-                    href="#"
+                    href={job.applyUrl || '#'}
                     className="w-full md:w-auto px-6 py-2.5 rounded-lg border border-violet-500/30 text-violet-300 font-medium hover:bg-violet-600 hover:text-white hover:border-violet-600 transition-all text-center"
                   >
                     Apply Now
