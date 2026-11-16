@@ -34,6 +34,36 @@ const fallbackProjects = [
     tags: ['Next.js', 'Shopify API', 'Stripe', 'Redis'],
     link: '#',
   },
+  {
+    id: 4,
+    title: 'Qdev-AI',
+    category: 'AI & Machine Learning',
+    caption: 'Intelligent enterprise AI assistant & automation suite.',
+    description: 'An intelligent enterprise-grade AI automation and workflow assistant designed to accelerate software engineering and business operations.',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    tags: ['Next.js', 'Python', 'OpenAI / LLMs', 'Tailwind CSS', 'FastAPI'],
+    link: '#',
+  },
+  {
+    id: 5,
+    title: 'Medbill',
+    category: 'Healthcare SaaS',
+    caption: 'Streamlined medical billing & claims management system.',
+    description: 'A modern medical billing and claims processing system ensuring accurate invoicing, compliance, and automated insurance claim workflows.',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'HIPAA Compliant', 'Tailwind CSS'],
+    link: '#',
+  },
+  {
+    id: 6,
+    title: 'CSSdaily prep',
+    category: 'EdTech & Learning',
+    caption: 'Comprehensive competitive exam preparation platform.',
+    description: 'A specialized online prep platform tailored for competitive CSS examination aspirants featuring daily quizzes, study resources, and progress tracking.',
+    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1200',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Analytics'],
+    link: '#',
+  },
 ];
 
 const testimonials = [
