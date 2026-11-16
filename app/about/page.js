@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: 'About Q-Dev Solutions',
     description: 'Learn about our mission, vision, and the values driving innovation at Q-Dev Solutions.',
-    url: 'https://qdevsolutions.com/about',
+    url: 'https://www.qdevsol.site/about',
     type: 'website',
   },
 };
@@ -64,7 +64,7 @@ export default function About() {
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="w-12 h-12 rounded-lg bg-violet-500/10 flex items-center justify-center text-2xl flex-shrink-0">
-                    🚀
+                    ðŸš€
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">Innovation First</h3>
@@ -73,7 +73,7 @@ export default function About() {
                 </div>
                 <div className="flex gap-4">
                   <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center text-2xl flex-shrink-0">
-                    🤝
+                    ðŸ¤
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">Client Partnership</h3>

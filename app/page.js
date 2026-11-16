@@ -9,11 +9,11 @@ import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'Q-Dev Solutions â€” Empowering Your Digital Presence',
+  title: 'Q-Dev Solutions Ã¢â‚¬â€ Empowering Your Digital Presence',
   description:
     'Q-Dev Solutions delivers world-class web development, mobile apps, AI integrations, and software solutions tailored to your business goals.',
   alternates: {
-    canonical: 'https://qdevsolutions.com',
+    canonical: 'https://www.qdevsol.site',
   },
 };
 
@@ -22,7 +22,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Q-Dev Solutions',
-  url: 'https://qdevsolutions.com',
+  url: 'https://www.qdevsol.site',
   description:
     'Q-Dev Solutions specializes in web development, mobile app development, software development, UX/UI design, AI integrations, and QA testing.',
   contactPoint: {

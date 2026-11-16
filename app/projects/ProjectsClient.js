@@ -91,7 +91,7 @@ export default function ProjectsClient() {
       '@type': 'CreativeWork',
       name: project.title,
       description: project.caption || project.description,
-      url: project.link || 'https://qdevsolutions.com/projects',
+      url: project.link || 'https://www.qdevsol.site/projects',
     })),
   }), [projects]);
 

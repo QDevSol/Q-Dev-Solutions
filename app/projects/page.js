@@ -6,12 +6,12 @@ export const metadata = {
   title: 'Our Projects | Q-Dev Solutions',
   description: 'Explore our completed projects and see how Q-Dev Solutions helps businesses succeed.',
   alternates: {
-    canonical: 'https://qdevsolutions.com/projects',
+    canonical: 'https://www.qdevsol.site/projects',
   },
   openGraph: {
     title: 'Our Projects | Q-Dev Solutions',
     description: 'Explore our completed projects and see how Q-Dev Solutions helps businesses succeed.',
-    url: 'https://qdevsolutions.com/projects',
+    url: 'https://www.qdevsol.site/projects',
     type: 'website',
   },
 };

@@ -71,6 +71,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 
 Q-Dev Solutions - [support@qdevsol.site](mailto:support@qdevsol.site)
-Website: [https://qdevsolutions.com](https://qdevsolutions.com)
+Website: [https://www.qdevsol.site](https://www.qdevsol.site)
 
 # Q-Dev-Solutions

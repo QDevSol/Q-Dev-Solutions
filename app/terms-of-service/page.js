@@ -2,7 +2,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 export const metadata = {
-  title: 'Terms of Service â€” Q-Dev Solutions',
+  title: 'Terms of Service Ã¢â‚¬â€ Q-Dev Solutions',
   description: 'Terms of Service for Q-Dev Solutions. Please read these terms carefully before using our services.',
 };
 
@@ -24,7 +24,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-display font-semibold text-white mb-4">1. Agreement to Terms</h2>
               <p>
-                These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (&quot;you&quot;) and Q-Dev Solutions (&quot;we,&quot; &quot;us&quot; or &quot;our&quot;), concerning your access to and use of the <a href="https://qdevsolutions.com" className="text-violet-400 hover:text-violet-300">qdevsolutions.com</a> website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the &quot;Site&quot;).
+                These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (&quot;you&quot;) and Q-Dev Solutions (&quot;we,&quot; &quot;us&quot; or &quot;our&quot;), concerning your access to and use of the <a href="https://www.qdevsol.site" className="text-violet-400 hover:text-violet-300">www.qdevsol.site</a> website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the &quot;Site&quot;).
               </p>
               <p className="mt-4">
                 You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms of Service. If you do not agree with all of these Terms of Service, then you are expressly prohibited from using the Site and you must discontinue use immediately.

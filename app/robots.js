@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://qdevsolutions.com/sitemap.xml',
+    sitemap: 'https://www.qdevsol.site/sitemap.xml',
   };
 }

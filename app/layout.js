@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Q-Dev Solutions — Web Development, Mobile Apps & AI Integrations',
+  title: 'Q-Dev Solutions â€” Web Development, Mobile Apps & AI Integrations',
   description:
     'Q-Dev Solutions specializes in web development, mobile app development, software development, UX/UI design, AI integrations, and QA testing. Empowering your digital presence.',
   keywords: [
@@ -18,9 +18,9 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://qdevsolutions.com',
+    url: 'https://www.qdevsol.site',
     siteName: 'Q-Dev Solutions',
-    title: 'Q-Dev Solutions — Web Development, Mobile Apps & AI Integrations',
+    title: 'Q-Dev Solutions â€” Web Development, Mobile Apps & AI Integrations',
     description:
       'Q-Dev Solutions specializes in web development, mobile app development, software development, UX/UI design, AI integrations, and QA testing.',
     images: [
@@ -34,7 +34,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Q-Dev Solutions — Web Development, Mobile Apps & AI Integrations',
+    title: 'Q-Dev Solutions â€” Web Development, Mobile Apps & AI Integrations',
     description:
       'Q-Dev Solutions specializes in web development, mobile app development, software development, UX/UI design, AI integrations, and QA testing.',
     images: ['/og-image.png'],

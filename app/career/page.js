@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: 'Life at Q-Dev Solutions',
     description: 'Experience our culture of innovation and collaboration. See what makes Q-Dev Solutions a great place to work.',
-    url: 'https://qdevsolutions.com/career',
+    url: 'https://www.qdevsol.site/career',
     type: 'website',
   },
 };
@@ -37,17 +37,17 @@ export default function Career() {
     {
       title: 'Remote-First Culture',
       description: 'Work from anywhere in the world. We believe in output over hours.',
-      icon: '🌍',
+      icon: 'ðŸŒ',
     },
     {
       title: 'Continuous Learning',
       description: 'Access to courses, conferences, and workshops to help you grow.',
-      icon: '📚',
+      icon: 'ðŸ“š',
     },
     {
       title: 'Health & Wellness',
       description: 'Comprehensive health coverage and wellness programs for you and your family.',
-      icon: '💪',
+      icon: 'ðŸ’ª',
     },
   ];
 
