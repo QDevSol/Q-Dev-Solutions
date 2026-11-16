@@ -1,6 +1,7 @@
 import './globals.css';
 
 export const metadata = {
+  metadataBase: new URL('https://www.qdevsol.site'),
   title: 'Q-Dev Solutions â€” Web Development, Mobile Apps & AI Integrations',
   description:
     'Q-Dev Solutions specializes in web development, mobile app development, software development, UX/UI design, AI integrations, and QA testing. Empowering your digital presence.',
