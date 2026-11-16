@@ -9,7 +9,7 @@ import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'Q-Dev Solutions — Empowering Your Digital Presence',
+  title: 'Q-Dev Solutions â€” Empowering Your Digital Presence',
   description:
     'Q-Dev Solutions delivers world-class web development, mobile apps, AI integrations, and software solutions tailored to your business goals.',
   alternates: {
@@ -28,7 +28,7 @@ const jsonLd = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    email: 'info@qdevsolutions.com',
+    email: 'support@qdevsol.site',
   },
   sameAs: [],
   offers: [

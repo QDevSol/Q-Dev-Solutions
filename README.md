@@ -70,7 +70,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Q-Dev Solutions - [info@qdevsolutions.com](mailto:info@qdevsolutions.com)
+Q-Dev Solutions - [support@qdevsol.site](mailto:support@qdevsol.site)
 Website: [https://qdevsolutions.com](https://qdevsolutions.com)
 
 # Q-Dev-Solutions

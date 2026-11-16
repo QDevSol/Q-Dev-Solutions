@@ -2,7 +2,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 export const metadata = {
-  title: 'Terms of Service — Q-Dev Solutions',
+  title: 'Terms of Service â€” Q-Dev Solutions',
   description: 'Terms of Service for Q-Dev Solutions. Please read these terms carefully before using our services.',
 };
 
@@ -99,8 +99,8 @@ export default function TermsOfService() {
               </p>
               <div className="mt-4">
                 <p className="font-semibold text-white">Q-Dev Solutions</p>
-                <a href="mailto:info@qdevsolutions.com" className="text-violet-400 hover:text-violet-300 transition-colors">
-                  info@qdevsolutions.com
+                <a href="mailto:support@qdevsol.site" className="text-violet-400 hover:text-violet-300 transition-colors">
+                  support@qdevsol.site
                 </a>
               </div>
             </section>

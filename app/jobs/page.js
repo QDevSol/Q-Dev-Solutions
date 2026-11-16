@@ -100,7 +100,7 @@ export default function Jobs() {
                         </svg>
                         {job.department}
                       </span>
-                      <span className="hidden sm:inline">•</span>
+                      <span className="hidden sm:inline">â€¢</span>
                       <span className="flex items-center gap-1">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -108,7 +108,7 @@ export default function Jobs() {
                         </svg>
                         {job.location}
                       </span>
-                      <span className="hidden sm:inline">•</span>
+                      <span className="hidden sm:inline">â€¢</span>
                       <span className="flex items-center gap-1">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -132,7 +132,7 @@ export default function Jobs() {
                 Don't see a role that fits? We're always looking for talent.
               </p>
               <a
-                href="mailto:careers@qdevsolutions.com"
+                href="mailto:support@qdevsol.site"
                 className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 font-medium transition-colors border-b border-transparent hover:border-violet-300"
               >
                 Send us your resume

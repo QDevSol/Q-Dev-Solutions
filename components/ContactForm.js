@@ -44,7 +44,7 @@ export default function ContactForm() {
             {/* Contact details */}
             <div className="space-y-4">
               <a
-                href="mailto:info@qdevsolutions.com"
+                href="mailto:support@qdevsol.site"
                 className="flex items-center gap-4 p-4 rounded-xl bg-[#1A1330] border border-[#2D2050] hover:border-violet-500/50 transition-all group"
               >
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-purple-800 flex items-center justify-center text-white shadow-lg shadow-violet-700/30 group-hover:shadow-violet-500/50 transition-shadow flex-shrink-0">
@@ -54,7 +54,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 mb-0.5">Email us</div>
-                  <div className="text-slate-300 group-hover:text-white transition-colors font-medium">info@qdevsolutions.com</div>
+                  <div className="text-slate-300 group-hover:text-white transition-colors font-medium">support@qdevsol.site</div>
                 </div>
               </a>
 

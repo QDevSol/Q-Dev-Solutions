@@ -2,7 +2,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 export const metadata = {
-  title: 'Privacy Policy — Q-Dev Solutions',
+  title: 'Privacy Policy â€” Q-Dev Solutions',
   description: 'Privacy Policy for Q-Dev Solutions. Learn how we collect, use, and protect your information.',
 };
 
@@ -108,8 +108,8 @@ export default function PrivacyPolicy() {
               </p>
               <div className="mt-4">
                 <p className="font-semibold text-white">Q-Dev Solutions</p>
-                <a href="mailto:info@qdevsolutions.com" className="text-violet-400 hover:text-violet-300 transition-colors">
-                  info@qdevsolutions.com
+                <a href="mailto:support@qdevsol.site" className="text-violet-400 hover:text-violet-300 transition-colors">
+                  support@qdevsol.site
                 </a>
               </div>
             </section>
